@@ -55,12 +55,32 @@ class RootTableViewController: UITableViewController {
                     cell.textLabel?.font = UIFont(name:"FontAwesome",size:15)
                     let index = myList.index(myList.startIndex , offsetBy: indexPath.row)
                     cell.textLabel?.text = myList.keys[index]
-                    cell.detailTextLabel?.text =  getTaskStatus(taskKey: myList.keys[index])
+                   let taskStatus =  getTaskStatus(taskKey: myList.keys[index])
+                    cell.detailTextLabel?.text =  taskStatus
+                    let switchView = UISwitch(frame: .zero)
+                    if (taskStatus.contains("Completed"))
+                    {
+                        switchView.setOn(false, animated: true)
+                        
+                    }
+                    else
+                    {
+                        switchView.setOn(true, animated: true)
+                        
+                    }
+                    switchView.tag = indexPath.row // for detect which row switch Changed
+                    switchView.addTarget(self, action: #selector(self.switchChanged(_:)), for: .valueChanged)
+                    cell.accessoryView = switchView
                     
              return cell
              
        
         
+    }
+    @objc func switchChanged(_ sender : UISwitch!){
+
+          print("table row switch Changed \(sender.tag)")
+          print("The switch is \(sender.isOn ? "ON" : "OFF")")
     }
     private func getTaskStatus(taskKey : String) -> String
     {
