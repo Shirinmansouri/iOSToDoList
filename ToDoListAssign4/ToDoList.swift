@@ -10,31 +10,38 @@ import UIKit
 class ToDoList
 {
     static let sharedToDoList = ToDoList()
-    private(set) var myToDoList: [String: [Date : Int]] = [:]
+    private(set) var myToDoListDate: [String: Date] = [:]
+    private(set) var myToDoListStatus: [String: Int] = [:]
     init()
     {
         let defaults = UserDefaults.standard
-        let storedList = defaults.object(forKey: "ToDoList") as? [String:[Date : Int]]
-        myToDoList = storedList != nil ? storedList! : [:]
+        let storedListDate = defaults.object(forKey: "ToDoListDate") as? [String: Date]
+        let storedListStatus = defaults.object(forKey: "ToDoListStatus") as? [String: Int]
+        myToDoListDate = storedListDate != nil ? storedListDate! : [:]
+        myToDoListStatus = storedListStatus != nil ? storedListStatus! : [:]
         
     }
     func addToList(newItemName: String , dueDate : Date , status : Int) {
-        if !myToDoList.keys.contains(newItemName) {
-            myToDoList.updateValue([dueDate : status], forKey: newItemName)
-         
+        if !myToDoListDate.keys.contains(newItemName) {
+            myToDoListDate.updateValue(dueDate, forKey: newItemName)
+            myToDoListStatus.updateValue(status, forKey: newItemName)
             }
         }
         
-        func removeFromList(itemName: String) {
-            if let index = myToDoList.keys.firstIndex(of: itemName) {
-                myToDoList.remove(at: index)
+    func removeFromList(itemName: String) {
+      if let index = myToDoListDate.keys.firstIndex(of: itemName)
+           {
+                myToDoListDate.remove(at: index)
+                let indexStatus = myToDoListStatus.keys.firstIndex(of: itemName)
+                myToDoListStatus.remove(at: indexStatus!)
                 saveList()
             }
         }
         
-        private func saveList() {
+    private func saveList() {
             let defaults = UserDefaults.standard
-            defaults.set(myToDoList, forKey: "ToDoList")
+            defaults.set(myToDoListDate, forKey: "ToDoListDate")
+            defaults.set(myToDoListDate, forKey: "ToDoListStatus")
             defaults.synchronize()
         }
 }

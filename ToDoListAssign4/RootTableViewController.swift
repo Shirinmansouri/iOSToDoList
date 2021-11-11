@@ -9,11 +9,13 @@ import UIKit
 import Foundation
 
 class RootTableViewController: UITableViewController {
-    private var myList: [String : [Date : Int]] = [:]
+    private var myListDate: [String : Date] = [:]
+    private var myListStatus : [String : Int] = [:]
     private var cellPointSize: CGFloat!
     private var toDoList: ToDoList!
     private static let TaskCell = "Cell"
     private static let DetailCell = "CellDetail"
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,7 +35,8 @@ class RootTableViewController: UITableViewController {
         let preferredTableViewFont = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.headline)
         cellPointSize = preferredTableViewFont.pointSize
         tableView.estimatedRowHeight = cellPointSize
-        myList  = toDoList.myToDoList
+        myListDate  = toDoList.myToDoListDate
+        myListStatus = toDoList.myToDoListStatus
    
     }
 
@@ -44,62 +47,78 @@ class RootTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return section == 0 ? myList.count : 1
+        return section == 0 ? myListDate.count+1 : 1
        
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-                    // The to do list names
         let cell = tableView.dequeueReusableCell(withIdentifier: RootTableViewController.TaskCell, for: indexPath)
-
+        if (indexPath.row == 0)
+        {
+            cell.textLabel?.font = UIFont(name:"FontAwesome",size:20)
+            cell.textLabel?.text = " My ToDo List"
+            cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+            cell.detailTextLabel?.text = ""
+            return cell
+        }
+        else
+        {
                     cell.textLabel?.font = UIFont(name:"FontAwesome",size:15)
-                    let index = myList.index(myList.startIndex , offsetBy: indexPath.row)
-                    cell.textLabel?.text = myList.keys[index]
-                   let taskStatus =  getTaskStatus(taskKey: myList.keys[index])
+                    let index = myListDate.index(myListDate.startIndex , offsetBy: indexPath.row-1)
+                    cell.textLabel?.text = myListDate.keys[index]
+                   let taskStatus =  getTaskStatus(taskKey: myListDate.keys[index])
                     cell.detailTextLabel?.text =  taskStatus
+                    cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 18)
                     let switchView = UISwitch(frame: .zero)
+        
                     if (taskStatus.contains("Completed"))
                     {
                         switchView.setOn(false, animated: true)
-                        
+                        switchView.isEnabled = false
+                        cell.isUserInteractionEnabled = false
+                        cell.textLabel?.alpha = 0.4
                     }
                     else
                     {
                         switchView.setOn(true, animated: true)
                         
                     }
-                    switchView.tag = indexPath.row // for detect which row switch Changed
+                    switchView.tag = indexPath.row
                     switchView.addTarget(self, action: #selector(self.switchChanged(_:)), for: .valueChanged)
                     cell.accessoryView = switchView
-                    
-             return cell
-             
+            
+                    let image = UIImage(named: "editIcon")
+                    cell.imageView?.image = image
+                    let highlightedImage = UIImage(named: "editIconHighlight")
+                    cell.imageView?.highlightedImage = highlightedImage
        
-        
+                return cell
+        }
     }
+    
     @objc func switchChanged(_ sender : UISwitch!){
-
+        
+       // tableView.reloadData()
           print("table row switch Changed \(sender.tag)")
           print("The switch is \(sender.isOn ? "ON" : "OFF")")
     }
     private func getTaskStatus(taskKey : String) -> String
     {
-        let result : [Date : Int]? = myList[taskKey]
-        for item in result!.keys {
-            if (result?[item] == 0)
+        let taskDate : Date! = myListDate[taskKey]
+        let taskStatus : Int? = myListStatus[taskKey]
+            if (taskStatus == 0)
             {
                 return "Completed"
                 
             }
             else
             {
-                if (item < Date())
+                if (taskDate! < Date())
                 {
                     return "OverDue"
                 }
                 else
                 {
-                    let dateString = "\(item)"
+                    let dateString : String! = "\(taskDate!)"
                     let index = dateString.index(dateString.startIndex, offsetBy: 16)
                     return   String(dateString.prefix(upTo: index))
                 }
@@ -107,10 +126,22 @@ class RootTableViewController: UITableViewController {
                 
             }
           
-        }
+        
         return ""
     }
  
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+               let defaults=UserDefaults.standard
+               let intIndex = indexPath.row // where intIndex < myDictionary.count
+               let index = myListDate.index(myListDate.startIndex, offsetBy: intIndex)
+                defaults.set(myListDate.keys[index], forKey: "TaskName")
+        
+        
+                let vc=storyboard?.instantiateViewController(withIdentifier: "Detail") as! DetailViewController
+                vc.modalPresentationStyle = .fullScreen
+                present(vc, animated: true)
+    }
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)

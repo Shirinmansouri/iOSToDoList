@@ -18,6 +18,7 @@
 		BF4C2073273A0D6C000CDEE2 /* ToDoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4C2072273A0D6C000CDEE2 /* ToDoList.swift */; };
 		BF4C2075273A1A7E000CDEE2 /* RootTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4C2074273A1A7E000CDEE2 /* RootTableViewController.swift */; };
 		BF4C2077273A1EAC000CDEE2 /* DateExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4C2076273A1EAC000CDEE2 /* DateExtention.swift */; };
+		BFAF5C63273C5637001DD1E6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAF5C62273C5637001DD1E6 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		BF4C2072273A0D6C000CDEE2 /* ToDoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoList.swift; sourceTree = "<group>"; };
 		BF4C2074273A1A7E000CDEE2 /* RootTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTableViewController.swift; sourceTree = "<group>"; };
 		BF4C2076273A1EAC000CDEE2 /* DateExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtention.swift; sourceTree = "<group>"; };
+		BFAF5C62273C5637001DD1E6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				BF4C2072273A0D6C000CDEE2 /* ToDoList.swift */,
 				BF4C2074273A1A7E000CDEE2 /* RootTableViewController.swift */,
 				BF4C2076273A1EAC000CDEE2 /* DateExtention.swift */,
+				BFAF5C62273C5637001DD1E6 /* DetailViewController.swift */,
 			);
 			path = ToDoListAssign4;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				BF4C2043273A0644000CDEE2 /* AppDelegate.swift in Sources */,
 				BF4C2045273A0644000CDEE2 /* SceneDelegate.swift in Sources */,
 				BF4C2077273A1EAC000CDEE2 /* DateExtention.swift in Sources */,
+				BFAF5C63273C5637001DD1E6 /* DetailViewController.swift in Sources */,
 				BF4C2073273A0D6C000CDEE2 /* ToDoList.swift in Sources */,
 				BF4C2075273A1A7E000CDEE2 /* RootTableViewController.swift in Sources */,
 			);

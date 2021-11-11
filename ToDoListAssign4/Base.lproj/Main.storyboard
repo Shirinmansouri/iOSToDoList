@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -70,6 +71,253 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kcA-JG-Ljz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-302" y="-68"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="yjb-4L-J22">
+            <objects>
+                <viewController storyboardIdentifier="Detail" id="3XD-O5-BHL" customClass="DetailViewController" customModule="ToDoListAssign4" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ksv-ZZ-nkC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fDW-CX-CzZ">
+                                <rect key="frame" x="20" y="58" width="374" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="374" id="AE6-Iu-lXg"/>
+                                    <constraint firstAttribute="height" constant="50" id="oDy-7H-Ub9"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="Label">
+                                        <attributes>
+                                            <font key="NSFont" size="24" name="AvenirNext-DemiBold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GGz-8H-UV6">
+                                <rect key="frame" x="8" y="126" width="95" height="27.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27.5" id="MJv-l7-BoL"/>
+                                    <constraint firstAttribute="width" constant="95" id="ovx-AB-5J2"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="Name">
+                                        <attributes>
+                                            <font key="NSFont" size="20" name="AvenirNext-DemiBold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6aS-I2-aWb">
+                                <rect key="frame" x="8" y="206" width="107" height="27.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27.5" id="2rt-Ql-Xct"/>
+                                    <constraint firstAttribute="width" constant="107" id="mno-38-hWz"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="Description">
+                                        <attributes>
+                                            <font key="NSFont" size="20" name="AvenirNext-DemiBold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="au2-Ra-CVZ">
+                                <rect key="frame" x="8" y="479" width="200" height="27.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Joi-Pc-392"/>
+                                    <constraint firstAttribute="height" constant="27.5" id="t2f-nk-HiE"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="Has Due Date">
+                                        <attributes>
+                                            <font key="NSFont" size="20" name="AvenirNext-DemiBold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VAY-Rq-FZU">
+                                <rect key="frame" x="123" y="126" width="273" height="61"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="61" id="TSu-4i-2gd"/>
+                                    <constraint firstAttribute="width" constant="273" id="kDc-6Q-zIi"/>
+                                </constraints>
+                                <attributedString key="attributedText"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vRC-v2-cuN">
+                                <rect key="frame" x="123" y="206" width="271" height="238"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="238" id="Yit-Yj-U0b"/>
+                                    <constraint firstAttribute="width" constant="271" id="stx-b5-mqv"/>
+                                </constraints>
+                                <attributedString key="attributedText"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="XWn-DG-Dyh">
+                                <rect key="frame" x="347" y="483" width="51" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="AqY-bg-wWa"/>
+                                    <constraint firstAttribute="width" constant="49" id="xMw-QR-JMu"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="hasDueDateChanged:" destination="3XD-O5-BHL" eventType="valueChanged" id="Myw-la-25E"/>
+                                </connections>
+                            </switch>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tXd-as-hAN">
+                                <rect key="frame" x="20" y="542" width="374" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="374" id="EaS-Hl-yLX"/>
+                                    <constraint firstAttribute="height" constant="34" id="yZc-Ay-qZb"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="LHN-qb-hQq">
+                                <rect key="frame" x="20" y="678" width="374" height="75"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ilq-Ky-e2W">
+                                        <rect key="frame" x="0.0" y="0.0" width="111.5" height="75"/>
+                                        <color key="tintColor" red="0.16237936818654097" green="0.5915248412509706" blue="0.5915248412509706" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="tinted">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Update">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <font key="NSFont" size="18" name="AvenirNext-DemiBold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xvt-Ue-n7t">
+                                        <rect key="frame" x="131.5" y="0.0" width="111" height="75"/>
+                                        <color key="tintColor" red="0.99685894119999996" green="0.1135901760034369" blue="0.2507655316783195" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="tinted">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Delete">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <font key="NSFont" size="18" name="AvenirNext-DemiBold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RvW-hb-0Er">
+                                        <rect key="frame" x="262.5" y="0.0" width="111.5" height="75"/>
+                                        <color key="tintColor" red="0.16237936820000001" green="0.59152484130000005" blue="0.59152484130000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="tinted">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Cancel">
+                                                    <attributes>
+                                                        <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                                        <font key="NSFont" size="18" name="AvenirNext-DemiBold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </buttonConfiguration>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="1nR-at-zjQ"/>
+                                    <constraint firstAttribute="width" constant="374" id="lGN-bI-3pz"/>
+                                </constraints>
+                            </stackView>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="tQi-cV-lDQ">
+                                <rect key="frame" x="347" y="603" width="51" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="49" id="FQG-mK-M2v"/>
+                                    <constraint firstAttribute="height" constant="31" id="c21-fK-4nf"/>
+                                </constraints>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vqh-WL-9t3">
+                                <rect key="frame" x="8" y="591" width="200" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="lTb-qj-L7k"/>
+                                    <constraint firstAttribute="width" constant="200" id="w59-wh-X1e"/>
+                                </constraints>
+                                <attributedString key="attributedText">
+                                    <fragment content="Is Completed">
+                                        <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <font key="NSFont" size="20" name="AvenirNext-DemiBold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="FeZ-QO-vUd"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <accessibility key="accessibilityConfiguration" identifier="Detail"/>
+                        <constraints>
+                            <constraint firstItem="tXd-as-hAN" firstAttribute="top" secondItem="XWn-DG-Dyh" secondAttribute="bottom" constant="28" id="5ie-zJ-b77"/>
+                            <constraint firstItem="XWn-DG-Dyh" firstAttribute="top" secondItem="vRC-v2-cuN" secondAttribute="bottom" constant="39" id="7x1-lN-Qr6"/>
+                            <constraint firstItem="6aS-I2-aWb" firstAttribute="top" secondItem="GGz-8H-UV6" secondAttribute="bottom" constant="52.5" id="8d5-hj-erQ"/>
+                            <constraint firstItem="tQi-cV-lDQ" firstAttribute="top" secondItem="tXd-as-hAN" secondAttribute="bottom" constant="27" id="AYk-wA-zPQ"/>
+                            <constraint firstItem="Vqh-WL-9t3" firstAttribute="top" secondItem="tXd-as-hAN" secondAttribute="bottom" constant="15" id="BOm-lU-Wdj"/>
+                            <constraint firstItem="FeZ-QO-vUd" firstAttribute="trailing" secondItem="vRC-v2-cuN" secondAttribute="trailing" constant="20" id="Blf-Me-Dp2"/>
+                            <constraint firstItem="FeZ-QO-vUd" firstAttribute="trailing" secondItem="tQi-cV-lDQ" secondAttribute="trailing" constant="18" id="C4o-ke-Txw"/>
+                            <constraint firstItem="GGz-8H-UV6" firstAttribute="leading" secondItem="FeZ-QO-vUd" secondAttribute="leading" constant="8" id="Ckp-CB-s3r"/>
+                            <constraint firstItem="GGz-8H-UV6" firstAttribute="top" secondItem="fDW-CX-CzZ" secondAttribute="bottom" constant="18" id="Cky-rg-Kp9"/>
+                            <constraint firstItem="6aS-I2-aWb" firstAttribute="leading" secondItem="FeZ-QO-vUd" secondAttribute="leading" constant="8" id="Euu-d1-uBW"/>
+                            <constraint firstItem="vRC-v2-cuN" firstAttribute="leading" secondItem="6aS-I2-aWb" secondAttribute="trailing" constant="8" symbolic="YES" id="G5Z-ej-0pP"/>
+                            <constraint firstItem="au2-Ra-CVZ" firstAttribute="leading" secondItem="FeZ-QO-vUd" secondAttribute="leading" constant="8" id="Gt8-Cc-5kL"/>
+                            <constraint firstItem="6aS-I2-aWb" firstAttribute="top" secondItem="GGz-8H-UV6" secondAttribute="bottom" constant="52.5" id="HlB-nb-eaA"/>
+                            <constraint firstItem="tXd-as-hAN" firstAttribute="top" secondItem="XWn-DG-Dyh" secondAttribute="bottom" constant="28" id="Hlt-4e-rDX"/>
+                            <constraint firstItem="au2-Ra-CVZ" firstAttribute="top" secondItem="vRC-v2-cuN" secondAttribute="bottom" constant="35" id="M6D-zg-1Vy"/>
+                            <constraint firstItem="XWn-DG-Dyh" firstAttribute="leading" secondItem="au2-Ra-CVZ" secondAttribute="trailing" constant="139" id="OfO-kb-ZBI"/>
+                            <constraint firstItem="au2-Ra-CVZ" firstAttribute="top" secondItem="6aS-I2-aWb" secondAttribute="bottom" constant="245.5" id="QNk-xU-ngb"/>
+                            <constraint firstItem="tQi-cV-lDQ" firstAttribute="leading" secondItem="Vqh-WL-9t3" secondAttribute="trailing" constant="139" id="RhY-HP-xVJ"/>
+                            <constraint firstItem="XWn-DG-Dyh" firstAttribute="leading" secondItem="au2-Ra-CVZ" secondAttribute="trailing" constant="139" id="RvU-ds-Gqj"/>
+                            <constraint firstItem="tQi-cV-lDQ" firstAttribute="leading" secondItem="Vqh-WL-9t3" secondAttribute="trailing" constant="139" id="Zug-rG-5mu"/>
+                            <constraint firstItem="tXd-as-hAN" firstAttribute="top" secondItem="au2-Ra-CVZ" secondAttribute="bottom" constant="35.5" id="Zym-eD-WKV"/>
+                            <constraint firstItem="GGz-8H-UV6" firstAttribute="top" secondItem="fDW-CX-CzZ" secondAttribute="bottom" constant="18" id="dC9-wz-kvj"/>
+                            <constraint firstItem="au2-Ra-CVZ" firstAttribute="top" secondItem="vRC-v2-cuN" secondAttribute="bottom" constant="35" id="e0x-bR-2rP"/>
+                            <constraint firstItem="LHN-qb-hQq" firstAttribute="top" secondItem="Vqh-WL-9t3" secondAttribute="bottom" constant="44" id="fwo-JT-PQD"/>
+                            <constraint firstItem="FeZ-QO-vUd" firstAttribute="trailing" secondItem="tXd-as-hAN" secondAttribute="trailing" constant="20" id="gVI-Jd-Iy7"/>
+                            <constraint firstItem="fDW-CX-CzZ" firstAttribute="leading" secondItem="FeZ-QO-vUd" secondAttribute="leading" constant="20" id="l4C-2W-Bxx"/>
+                            <constraint firstItem="VAY-Rq-FZU" firstAttribute="top" secondItem="fDW-CX-CzZ" secondAttribute="bottom" constant="18" id="lGk-4t-cK9"/>
+                            <constraint firstItem="FeZ-QO-vUd" firstAttribute="trailing" secondItem="LHN-qb-hQq" secondAttribute="trailing" constant="20" id="lOR-zW-w9r"/>
+                            <constraint firstItem="Vqh-WL-9t3" firstAttribute="leading" secondItem="FeZ-QO-vUd" secondAttribute="leading" constant="8" id="mzo-vD-Oph"/>
+                            <constraint firstItem="fDW-CX-CzZ" firstAttribute="top" secondItem="FeZ-QO-vUd" secondAttribute="top" constant="14" id="oOr-ut-MrN"/>
+                            <constraint firstItem="LHN-qb-hQq" firstAttribute="leading" secondItem="FeZ-QO-vUd" secondAttribute="leading" constant="20" id="our-b3-f51"/>
+                            <constraint firstItem="FeZ-QO-vUd" firstAttribute="trailing" secondItem="fDW-CX-CzZ" secondAttribute="trailing" constant="20" id="pVX-AC-C8b"/>
+                            <constraint firstItem="vRC-v2-cuN" firstAttribute="top" secondItem="VAY-Rq-FZU" secondAttribute="bottom" constant="19" id="qH9-ha-Z78"/>
+                            <constraint firstItem="tXd-as-hAN" firstAttribute="leading" secondItem="FeZ-QO-vUd" secondAttribute="leading" constant="20" id="sGQ-ea-gEW"/>
+                            <constraint firstItem="VAY-Rq-FZU" firstAttribute="leading" secondItem="GGz-8H-UV6" secondAttribute="trailing" constant="20" id="toQ-VF-2lk"/>
+                            <constraint firstItem="FeZ-QO-vUd" firstAttribute="trailing" secondItem="XWn-DG-Dyh" secondAttribute="trailing" constant="18" id="uGF-bk-Vuu"/>
+                            <constraint firstItem="vRC-v2-cuN" firstAttribute="top" secondItem="VAY-Rq-FZU" secondAttribute="bottom" constant="19" id="wHz-2E-pv6"/>
+                            <constraint firstItem="FeZ-QO-vUd" firstAttribute="trailing" secondItem="VAY-Rq-FZU" secondAttribute="trailing" constant="18" id="xNS-fg-Nki"/>
+                            <constraint firstItem="VAY-Rq-FZU" firstAttribute="leading" secondItem="GGz-8H-UV6" secondAttribute="trailing" constant="20" id="yov-w1-P39"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="hasDueDate" destination="XWn-DG-Dyh" id="prJ-9a-46O"/>
+                        <outlet property="lblTitle" destination="fDW-CX-CzZ" id="4vJ-cf-faJ"/>
+                        <outlet property="txtDueDate" destination="tXd-as-hAN" id="1en-7W-p0o"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eNJ-Ev-aS3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="373.91304347826087" y="-56.25"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Pnn-EA-U1i">
