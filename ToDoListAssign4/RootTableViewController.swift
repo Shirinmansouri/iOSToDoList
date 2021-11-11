@@ -1,9 +1,15 @@
-//
-//  RootTableViewController.swift
-//  ToDoListAssign4
-//
-//  Created by Shirin Mansouri on 2021-11-08.
-//
+/*
+ File : RootTableViewController
+ Author: Shirin Mansouri
+ StudentId: 301131068
+ 
+ Author: Shirin Mansouri
+ StudentId: 301216533
+ 
+ Last Modification Date: 10/November/2021
+ 
+ Description : an application to Show and Edit To Do List. Include three buttons to delete and cancel and update the list .
+ */
 
 import UIKit
 import Foundation
@@ -50,6 +56,7 @@ class RootTableViewController: UITableViewController {
         return section == 0 ? myListDate.count+1 : 1
        
     }
+    // Fill the table view and customize its columns
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: RootTableViewController.TaskCell, for: indexPath)
         if (indexPath.row == 0)
@@ -98,9 +105,9 @@ class RootTableViewController: UITableViewController {
     @objc func switchChanged(_ sender : UISwitch!){
         
        // tableView.reloadData()
-          print("table row switch Changed \(sender.tag)")
-          print("The switch is \(sender.isOn ? "ON" : "OFF")")
+
     }
+    // determine the final state of the task
     private func getTaskStatus(taskKey : String) -> String
     {
         let taskDate : Date! = myListDate[taskKey]
@@ -130,6 +137,7 @@ class RootTableViewController: UITableViewController {
         return ""
     }
  
+    // redirect to the detail screen to edit or delete the task 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
                let defaults=UserDefaults.standard

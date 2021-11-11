@@ -7,6 +7,8 @@
 
 import Foundation
 import UIKit
+
+// class for saving and processing our list in the local storage 
 class ToDoList
 {
     static let sharedToDoList = ToDoList()

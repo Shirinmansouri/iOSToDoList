@@ -1,9 +1,15 @@
-//
-//  DetailViewController.swift
-//  ToDoListAssign4
-//
-//  Created by Shirin Mansouri on 2021-11-10.
-//
+/*
+ File : DetailViewController
+ Author: Shirin Mansouri
+ StudentId: 301131068
+ 
+ Author: Shirin Mansouri
+ StudentId: 301216533
+ 
+ Last Modification Date: 10/November/2021
+ 
+ Description : an application to Show and Edit To Do List. Include three buttons to delete and cancel and update the list .
+ */
 
 import UIKit
 
@@ -17,6 +23,8 @@ class DetailViewController: UIViewController {
         let defaults=UserDefaults.standard
         let taskName = defaults.string(forKey: "TaskName")!
         lblTitle.text = taskName
+        
+        // Enable Date Picker to text input 
         let date = Date()
         let formatter = DateFormatter()
         formatter.dateFormat = "dd/MM/yyyy"
